@@ -90,14 +90,13 @@ def start_count(t):
     while current_time <= t and mixer.music.get_busy():
         if paused:
             continue
-        else:
-            mins, secs = divmod(current_time, 60)
-            mins = round(mins)
-            secs = round(secs)
-            timeformat = '{:02d}:{:02d}'.format(mins, secs)
-            currenttimelabel['text'] = "Current Time" + ' - ' + timeformat
-            time.sleep(1)
-            current_time += 1
+        mins, secs = divmod(current_time, 60)
+        mins = round(mins)
+        secs = round(secs)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        currenttimelabel['text'] = "Current Time" + ' - ' + timeformat
+        time.sleep(1)
+        current_time += 1
 def play_music():
     global paused
     if paused:
